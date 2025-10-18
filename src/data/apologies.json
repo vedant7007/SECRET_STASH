@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "text": "I'm sorry for the times I didn't listen closely enough when you needed to be heard.",
+    "intensity": "soft"
+  },
+  {
+    "id": 2,
+    "text": "I'm sorry for moments when my words hurt when they should have healed.",
+    "intensity": "deep"
+  },
+  {
+    "id": 3,
+    "text": "I'm sorry for the times I was too caught up in myself to see what you needed.",
+    "intensity": "deep"
+  },
+  {
+    "id": 4,
+    "text": "I'm sorry for not always showing you how much you mean to me in the ways you deserved.",
+    "intensity": "soft"
+  },
+  {
+    "id": 5,
+    "text": "I'm sorry for the silences when you needed reassurance.",
+    "intensity": "soft"
+  },
+  {
+    "id": 6,
+    "text": "I'm sorry for every tear I caused that could have been prevented with more care.",
+    "intensity": "deep"
+  },
+  {
+    "id": 7,
+    "text": "I'm sorry for the times I took you for granted instead of celebrating your presence.",
+    "intensity": "deep"
+  },
+  {
+    "id": 8,
+    "text": "I'm sorry for not always being patient when you needed understanding.",
+    "intensity": "soft"
+  }
+]

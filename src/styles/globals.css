@@ -1,0 +1,255 @@
+/**
+ * globals.css
+ *
+ * The foundational aesthetic of the Loveverse.
+ * Every pixel set with emotional intent.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color palette - emotions in hex */
+  --love-pink: #FFB6C1;
+  --dream-violet: #8A4FFF;
+  --deep-space: #0E001A;
+  --promise-gold: #FFCBA4;
+  --clarity-cyan: #80F5FF;
+  --soft-white: #F8F4FF;
+
+  /* Gradients */
+  --gradient-cosmic: linear-gradient(135deg, var(--deep-space) 0%, #1a0a2e 50%, #2d1b4e 100%);
+  --gradient-love: linear-gradient(135deg, var(--love-pink) 0%, var(--promise-gold) 100%);
+  --gradient-dream: linear-gradient(135deg, var(--dream-violet) 0%, var(--clarity-cyan) 100%);
+
+  /* Typography */
+  --font-title: 'Cinzel Decorative', serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Transitions */
+  --transition-gentle: 0.8s cubic-bezier(0.45, 0, 0.55, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-playful: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background: var(--gradient-cosmic);
+  color: var(--soft-white);
+  line-height: 1.6;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Typography styles */
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+}
+
+/* Utility classes */
+.script {
+  font-family: var(--font-script);
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.glow {
+  text-shadow: 0 0 20px currentColor;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-gentle) ease-out forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--love-pink);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--promise-gold);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--love-pink);
+  color: var(--deep-space);
+}
+
+::-moz-selection {
+  background: var(--love-pink);
+  color: var(--deep-space);
+}
+
+/* Button reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+button:focus {
+  outline: 2px solid var(--love-pink);
+  outline-offset: 4px;
+}
+
+/* Link reset */
+a {
+  color: var(--clarity-cyan);
+  text-decoration: none;
+  transition: color var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--love-pink);
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Responsive canvas containers */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.content-overlay > * {
+  pointer-events: auto;
+}

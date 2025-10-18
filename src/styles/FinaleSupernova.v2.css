@@ -1,0 +1,91 @@
+.finale-v2-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #1a0f2e 0%, #000000 100%);
+}
+
+.finale-v2-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.finale-v2-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finale-phase {
+  text-align: center;
+}
+
+.finale-subtitle {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--soft-white);
+  font-weight: 300;
+  font-style: italic;
+  text-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+}
+
+.finale-message {
+  text-align: center;
+  max-width: 900px;
+  padding: var(--space-lg);
+}
+
+.finale-title {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--love-pink);
+  text-shadow:
+    0 0 40px rgba(255, 182, 193, 0.8),
+    0 0 80px rgba(255, 182, 193, 0.6),
+    0 0 120px rgba(255, 182, 193, 0.4);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xl);
+}
+
+.finale-quote {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: var(--soft-white);
+  line-height: 2;
+  font-weight: 300;
+  margin-bottom: var(--space-xl);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.finale-signature {
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  color: var(--promise-gold);
+  margin-bottom: var(--space-xl);
+  text-shadow: 0 0 20px rgba(255, 203, 164, 0.5);
+}
+
+.finale-restart-btn {
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--deep-space);
+  background: linear-gradient(135deg, var(--love-pink), var(--promise-gold));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 182, 193, 0.4);
+  transition: all 0.4s ease;
+}
+
+.finale-restart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(255, 182, 193, 0.6);
+}

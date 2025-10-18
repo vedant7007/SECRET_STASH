@@ -1,0 +1,99 @@
+.promises-v2-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #2a1a0f 0%, var(--deep-space) 100%);
+}
+
+.promises-v2-glow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255, 203, 164, 0.2), transparent 70%);
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.promises-v2-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg);
+}
+
+.promises-v2-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--promise-gold);
+  text-shadow: 0 0 40px rgba(255, 203, 164, 0.6);
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-sm);
+}
+
+.promises-v2-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(248, 244, 255, 0.7);
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: var(--space-xl);
+}
+
+.promises-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: var(--space-lg);
+}
+
+.promise-v2-card {
+  padding: var(--space-md);
+  background: rgba(14, 0, 26, 0.7);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 203, 164, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 203, 164, 0.1);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.promise-v2-card.selected {
+  border-color: rgba(255, 203, 164, 0.6);
+  background: rgba(255, 203, 164, 0.1);
+}
+
+.promise-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--promise-gold);
+}
+
+.promise-text {
+  font-size: 1.1rem;
+  color: var(--soft-white);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.promises-v2-continue-btn {
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--deep-space);
+  background: linear-gradient(135deg, var(--promise-gold), var(--love-pink));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 203, 164, 0.4);
+  transition: all 0.4s ease;
+}

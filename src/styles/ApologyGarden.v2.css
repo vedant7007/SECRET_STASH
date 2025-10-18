@@ -1,0 +1,166 @@
+/**
+ * ApologyGarden.v2.css
+ * Gentle, rain-soaked, intimate styling
+ */
+
+.garden-v2-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0a0520 0%, #0d1428 50%, #0a0f1e 100%);
+}
+
+.garden-v2-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.garden-v2-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md);
+  pointer-events: none;
+}
+
+.garden-v2-content > * {
+  pointer-events: auto;
+}
+
+.garden-v2-header {
+  text-align: center;
+  padding-top: var(--space-lg);
+}
+
+.garden-v2-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: #80F5FF;
+  text-shadow: 0 0 30px rgba(128, 245, 255, 0.5);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm);
+}
+
+.garden-v2-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(248, 244, 255, 0.7);
+  font-weight: 300;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.garden-v2-apology-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 650px;
+  padding: var(--space-lg);
+  background: rgba(14, 0, 26, 0.9);
+  border-radius: 20px;
+  border: 2px solid rgba(128, 245, 255, 0.3);
+  box-shadow: 0 0 50px rgba(128, 245, 255, 0.2), 0 20px 60px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.apology-rain-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(128, 245, 255, 0.05) 100%);
+  pointer-events: none;
+}
+
+.apology-text {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+  color: var(--soft-white);
+  text-align: center;
+  line-height: 2;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.intensity-deep .apology-text {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: #80F5FF;
+}
+
+.garden-v2-progress {
+  position: fixed;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.progress-label {
+  font-size: 0.95rem;
+  color: var(--clarity-cyan);
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #80F5FF, #FFB6C1);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(128, 245, 255, 0.6);
+}
+
+.garden-v2-continue-btn {
+  margin-top: var(--space-md);
+  padding: 1.1rem 2.8rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--deep-space);
+  background: linear-gradient(135deg, #80F5FF, #FFB6C1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(128, 245, 255, 0.4);
+  transition: all 0.4s ease;
+}
+
+.garden-v2-rain-ambiance {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(128, 245, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .garden-v2-apology-card {
+    max-width: 90%;
+    padding: var(--space-md);
+  }
+}

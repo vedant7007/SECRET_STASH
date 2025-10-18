@@ -1,0 +1,62 @@
+.constellation-v2-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #0f0a28 0%, var(--deep-space) 100%);
+}
+
+.constellation-v2-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.constellation-v2-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  pointer-events: none;
+}
+
+.constellation-v2-content > * {
+  pointer-events: auto;
+}
+
+.constellation-v2-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--love-pink);
+  text-shadow: 0 0 40px rgba(255, 182, 193, 0.6);
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.constellation-v2-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(248, 244, 255, 0.8);
+  text-align: center;
+  font-weight: 300;
+}
+
+.constellation-v2-continue-btn {
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--deep-space);
+  background: linear-gradient(135deg, var(--love-pink), var(--promise-gold));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 182, 193, 0.4);
+  transition: all 0.4s ease;
+}

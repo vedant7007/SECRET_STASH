@@ -1,0 +1,111 @@
+.globe-v2-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #1a0f2e 0%, var(--deep-space) 100%);
+}
+
+.globe-v2-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.globe-v2-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md);
+  pointer-events: none;
+}
+
+.globe-v2-content > * {
+  pointer-events: auto;
+}
+
+.globe-v2-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--promise-gold);
+  text-shadow: 0 0 40px rgba(255, 203, 164, 0.6);
+  text-align: center;
+  padding-top: var(--space-lg);
+  letter-spacing: 0.1em;
+}
+
+.globe-v2-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(248, 244, 255, 0.8);
+  text-align: center;
+  font-weight: 300;
+  margin-top: var(--space-sm);
+}
+
+.photo-tooltip {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.globe-v2-photo-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background: rgba(14, 0, 26, 0.95);
+  padding: var(--space-lg);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 203, 164, 0.3);
+  box-shadow: 0 0 60px rgba(255, 203, 164, 0.4);
+  max-width: 600px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.photo-placeholder {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--love-pink), var(--promise-gold));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--deep-space);
+  font-weight: 600;
+  margin: 0 auto var(--space-md);
+}
+
+.photo-caption {
+  font-size: 1.3rem;
+  color: var(--soft-white);
+  font-style: italic;
+}
+
+.globe-v2-continue-btn {
+  position: fixed;
+  bottom: var(--space-xl);
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--deep-space);
+  background: linear-gradient(135deg, var(--promise-gold), var(--love-pink));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 203, 164, 0.4);
+  transition: all 0.4s ease;
+}
