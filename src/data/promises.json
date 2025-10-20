@@ -2,46 +2,100 @@
   {
     "id": 1,
     "text": "I promise to always listen, truly listen, when you speak from your heart.",
-    "type": "always"
+    "emotion": "serenity",
+    "effect": "gentle-float",
+    "theme": "kindness",
+    "glow_color": "#80F5FF",
+    "orb_size": "medium",
+    "reveal_delay": 800,
+    "timing": 2.0
   },
   {
     "id": 2,
     "text": "I promise to celebrate your victories as if they were my own.",
-    "type": "forever"
+    "emotion": "joy",
+    "effect": "sparkle-burst",
+    "theme": "warmth",
+    "glow_color": "#FFB6C1",
+    "orb_size": "large",
+    "reveal_delay": 1000,
+    "timing": 1.8
   },
   {
     "id": 3,
     "text": "I promise to hold you gently through every storm.",
-    "type": "always"
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "strength",
+    "glow_color": "#8A4FFF",
+    "orb_size": "medium",
+    "reveal_delay": 900,
+    "timing": 2.2
   },
   {
     "id": 4,
     "text": "I promise to remind you of your strength when you forget.",
-    "type": "daily"
+    "emotion": "awe",
+    "effect": "radial-bloom",
+    "theme": "strength",
+    "glow_color": "#DC143C",
+    "orb_size": "large",
+    "reveal_delay": 1200,
+    "timing": 2.3
   },
   {
     "id": 5,
     "text": "I promise to choose you, every single day, in every single way.",
-    "type": "forever"
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "warmth",
+    "glow_color": "#FFCBA4",
+    "orb_size": "large",
+    "reveal_delay": 1400,
+    "timing": 2.8
   },
   {
     "id": 6,
     "text": "I promise to make you laugh when the world feels too heavy.",
-    "type": "daily"
+    "emotion": "elation",
+    "effect": "bounce-glow",
+    "theme": "light",
+    "glow_color": "#FFD700",
+    "orb_size": "medium",
+    "reveal_delay": 700,
+    "timing": 1.5
   },
   {
     "id": 7,
     "text": "I promise to grow with you, not apart from you.",
-    "type": "forever"
+    "emotion": "serenity",
+    "effect": "gentle-float",
+    "theme": "grace",
+    "glow_color": "#E8E0F5",
+    "orb_size": "medium",
+    "reveal_delay": 1000,
+    "timing": 2.3
   },
   {
     "id": 8,
     "text": "I promise to be your safe space, your home, your constant.",
-    "type": "always"
+    "emotion": "serenity",
+    "effect": "soft-glow",
+    "theme": "warmth",
+    "glow_color": "#FF8C42",
+    "orb_size": "large",
+    "reveal_delay": 1100,
+    "timing": 2.5
   },
   {
     "id": 9,
     "text": "I promise to love you not just for who you are, but for who you're becoming.",
-    "type": "forever"
+    "emotion": "completion",
+    "effect": "radial-bloom",
+    "theme": "beauty",
+    "glow_color": "#FFC0CB",
+    "orb_size": "large",
+    "reveal_delay": 1500,
+    "timing": 3.0
   }
 ]

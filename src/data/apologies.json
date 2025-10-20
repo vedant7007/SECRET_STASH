@@ -2,41 +2,97 @@
   {
     "id": 1,
     "text": "I'm sorry for the times I didn't listen closely enough when you needed to be heard.",
-    "intensity": "soft"
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "kindness",
+    "intensity": "soft",
+    "petal_count": 15,
+    "rain_intensity": 0.3,
+    "pause_duration": 2500,
+    "timing": 2.0
   },
   {
     "id": 2,
     "text": "I'm sorry for moments when my words hurt when they should have healed.",
-    "intensity": "deep"
+    "emotion": "tenderness",
+    "effect": "fade-in-warm",
+    "theme": "grace",
+    "intensity": "deep",
+    "petal_count": 25,
+    "rain_intensity": 0.6,
+    "pause_duration": 3000,
+    "timing": 2.5
   },
   {
     "id": 3,
     "text": "I'm sorry for the times I was too caught up in myself to see what you needed.",
-    "intensity": "deep"
+    "emotion": "tenderness",
+    "effect": "gentle-float",
+    "theme": "warmth",
+    "intensity": "deep",
+    "petal_count": 22,
+    "rain_intensity": 0.5,
+    "pause_duration": 3000,
+    "timing": 2.3
   },
   {
     "id": 4,
     "text": "I'm sorry for not always showing you how much you mean to me in the ways you deserved.",
-    "intensity": "soft"
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "beauty",
+    "intensity": "soft",
+    "petal_count": 18,
+    "rain_intensity": 0.4,
+    "pause_duration": 2800,
+    "timing": 2.2
   },
   {
     "id": 5,
     "text": "I'm sorry for the silences when you needed reassurance.",
-    "intensity": "soft"
+    "emotion": "serenity",
+    "effect": "fade-in-warm",
+    "theme": "kindness",
+    "intensity": "soft",
+    "petal_count": 12,
+    "rain_intensity": 0.3,
+    "pause_duration": 2400,
+    "timing": 1.8
   },
   {
     "id": 6,
     "text": "I'm sorry for every tear I caused that could have been prevented with more care.",
-    "intensity": "deep"
+    "emotion": "tenderness",
+    "effect": "gentle-float",
+    "theme": "warmth",
+    "intensity": "deep",
+    "petal_count": 28,
+    "rain_intensity": 0.7,
+    "pause_duration": 3200,
+    "timing": 2.8
   },
   {
     "id": 7,
     "text": "I'm sorry for the times I took you for granted instead of celebrating your presence.",
-    "intensity": "deep"
+    "emotion": "tenderness",
+    "effect": "fade-in-warm",
+    "theme": "grace",
+    "intensity": "deep",
+    "petal_count": 24,
+    "rain_intensity": 0.6,
+    "pause_duration": 3100,
+    "timing": 2.6
   },
   {
     "id": 8,
     "text": "I'm sorry for not always being patient when you needed understanding.",
-    "intensity": "soft"
+    "emotion": "serenity",
+    "effect": "soft-glow",
+    "theme": "kindness",
+    "intensity": "soft",
+    "petal_count": 16,
+    "rain_intensity": 0.4,
+    "pause_duration": 2600,
+    "timing": 2.1
   }
 ]

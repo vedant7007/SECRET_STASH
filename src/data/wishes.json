@@ -2,51 +2,101 @@
   {
     "id": 1,
     "text": "I wish your smile outlives galaxies and lights up every universe you enter",
-    "animation": "shooting-star"
+    "emotion": "joy",
+    "effect": "sparkle-burst",
+    "theme": "light",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 1.2
   },
   {
     "id": 2,
     "text": "I wish every dream you carry becomes a reality brighter than you imagined",
-    "animation": "twinkle"
+    "emotion": "wonder",
+    "effect": "twinkle",
+    "theme": "beauty",
+    "animation": "twinkle",
+    "intensity": "medium",
+    "timing": 1.5
   },
   {
     "id": 3,
     "text": "I wish you always know how deeply loved and cherished you are",
-    "animation": "bloom"
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "warmth",
+    "animation": "bloom",
+    "intensity": "soft",
+    "timing": 1.8
   },
   {
     "id": 4,
     "text": "I wish your laughter echoes through time, bringing joy wherever it travels",
-    "animation": "shooting-star"
+    "emotion": "elation",
+    "effect": "bounce-glow",
+    "theme": "light",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 1.0
   },
   {
     "id": 5,
     "text": "I wish you find peace in every storm and strength in every challenge",
-    "animation": "twinkle"
+    "emotion": "serenity",
+    "effect": "gentle-float",
+    "theme": "strength",
+    "animation": "twinkle",
+    "intensity": "medium",
+    "timing": 2.0
   },
   {
     "id": 6,
     "text": "I wish your kindness comes back to you tenfold, wrapped in love",
-    "animation": "bloom"
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "kindness",
+    "animation": "bloom",
+    "intensity": "soft",
+    "timing": 1.6
   },
   {
     "id": 7,
     "text": "I wish every sunrise reminds you of new beginnings and endless possibilities",
-    "animation": "shooting-star"
+    "emotion": "awe",
+    "effect": "radial-bloom",
+    "theme": "beauty",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 1.4
   },
   {
     "id": 8,
     "text": "I wish your heart stays as gentle and beautiful as it is today",
-    "animation": "twinkle"
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "grace",
+    "animation": "twinkle",
+    "intensity": "soft",
+    "timing": 1.7
   },
   {
     "id": 9,
     "text": "I wish you dance through life with the same grace you bring to my world",
-    "animation": "bloom"
+    "emotion": "joy",
+    "effect": "sparkle-burst",
+    "theme": "grace",
+    "animation": "bloom",
+    "intensity": "medium",
+    "timing": 1.3
   },
   {
     "id": 10,
     "text": "I wish that no matter where life takes us, you always feel my love beside you",
-    "animation": "shooting-star"
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "warmth",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 2.2
   }
 ]
