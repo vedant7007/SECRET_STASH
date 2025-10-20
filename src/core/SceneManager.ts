@@ -1,15 +1,21 @@
 /**
- * SceneManager.ts
+ * SceneManager.ts — CINEMATIC REBUILD
  *
  * The orchestrator of emotional journeys.
  * Each scene is a chapter, each transition is a breath.
  *
  * Philosophy: Scenes don't just change — they dissolve into each other,
  * like one feeling becoming another.
+ *
+ * PERFORMANCE UPGRADE:
+ * - Integrated cleanup system for memory leak prevention
+ * - Scene lifecycle hooks for proper resource disposal
+ * - Smooth transitions with GPU memory management
  */
 
 import { create } from 'zustand';
 import audioManager from './AudioManager';
+import { SceneCleanupManager } from './SceneCleanup';
 
 export type SceneId =
   | 'calibration'
@@ -40,11 +46,16 @@ interface SceneState {
   // Scene registry
   scenes: Map<SceneId, Scene>;
 
+  // Cleanup manager for current scene
+  cleanupManager: SceneCleanupManager | null;
+
   // Actions
   setScene: (sceneId: SceneId) => void;
   nextScene: () => void;
   previousSceneAction: () => void;
   initializeScenes: () => void;
+  registerCleanup: (cleanup: () => void) => void;
+  getCleanupManager: () => SceneCleanupManager;
 }
 
 // Scene definitions with emotional intent
@@ -129,17 +140,35 @@ const useSceneStore = create<SceneState>((set, get) => ({
   isTransitioning: false,
   progress: 0,
   scenes: new Map(),
+  cleanupManager: null,
 
   initializeScenes: () => {
     const sceneMap = new Map<SceneId, Scene>();
     sceneDefinitions.forEach(scene => {
       sceneMap.set(scene.id, scene);
     });
-    set({ scenes: sceneMap });
+    set({ scenes: sceneMap, cleanupManager: new SceneCleanupManager() });
+  },
+
+  registerCleanup: (cleanup: () => void) => {
+    const { cleanupManager } = get();
+    if (cleanupManager) {
+      cleanupManager.registerCustomCleanup(cleanup);
+    }
+  },
+
+  getCleanupManager: () => {
+    const { cleanupManager } = get();
+    if (!cleanupManager) {
+      const newManager = new SceneCleanupManager();
+      set({ cleanupManager: newManager });
+      return newManager;
+    }
+    return cleanupManager;
   },
 
   setScene: (sceneId: SceneId) => {
-    const { currentScene, scenes, isTransitioning } = get();
+    const { currentScene, scenes, isTransitioning, cleanupManager } = get();
 
     // Prevent transition spam
     if (isTransitioning) {
@@ -158,6 +187,16 @@ const useSceneStore = create<SceneState>((set, get) => ({
     console.log(`🌌 Transitioning: ${oldScene?.name} → ${newScene.name}`);
 
     set({ isTransitioning: true, previousScene: currentScene });
+
+    // CRITICAL: Cleanup old scene to prevent memory leaks
+    if (cleanupManager) {
+      console.log('🧹 Cleaning up previous scene...');
+      cleanupManager.cleanup();
+    }
+
+    // Create new cleanup manager for the incoming scene
+    const newCleanupManager = new SceneCleanupManager();
+    set({ cleanupManager: newCleanupManager });
 
     // Audio crossfade between scenes
     audioManager.crossfade(

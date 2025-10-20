@@ -1,0 +1,61 @@
+/**
+ * SettingsButton.css
+ *
+ * Floating settings trigger
+ */
+
+.settings-trigger {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--love-pink), var(--promise-gold));
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: var(--deep-space);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(255, 182, 193, 0.4), 0 0 32px rgba(255, 182, 193, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.settings-trigger:hover {
+  box-shadow: 0 8px 24px rgba(255, 182, 193, 0.6), 0 0 48px rgba(255, 182, 193, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.settings-trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+.settings-trigger svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Mobile positioning */
+@media (max-width: 768px) {
+  .settings-trigger {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .settings-trigger svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .settings-trigger {
+    transition: none;
+  }
+}

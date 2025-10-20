@@ -351,9 +351,232 @@ export const particleGlowShader = {
   }
 };
 
+/**
+ * MOBILE-OPTIMIZED SHADER VARIANTS
+ * Simplified versions with reduced complexity for stable 60FPS on mobile
+ */
+
+/**
+ * Aurora Shader - Mobile (Reduced FBM iterations, simpler noise)
+ */
+export const auroraShaderMobile = {
+  vertexShader: auroraShader.vertexShader,
+
+  fragmentShader: `
+    uniform float time;
+    uniform vec3 color1;
+    uniform vec3 color2;
+    uniform vec3 color3;
+    uniform float intensity;
+
+    varying vec2 vUv;
+    varying vec3 vPosition;
+
+    // Simplified noise
+    float noise(vec2 p) {
+      return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+    }
+
+    float smoothNoise(vec2 p) {
+      vec2 i = floor(p);
+      vec2 f = fract(p);
+      f = f * f * (3.0 - 2.0 * f);
+
+      float a = noise(i);
+      float b = noise(i + vec2(1.0, 0.0));
+      float c = noise(i + vec2(0.0, 1.0));
+      float d = noise(i + vec2(1.0, 1.0));
+
+      return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+    }
+
+    // Reduced FBM iterations (2 instead of 5)
+    float fbm(vec2 p) {
+      float value = 0.0;
+      float amplitude = 0.5;
+
+      value += amplitude * smoothNoise(p);
+      value += amplitude * 0.5 * smoothNoise(p * 2.0);
+
+      return value;
+    }
+
+    void main() {
+      vec2 p = vUv * 2.0;
+      p.x += time * 0.1;
+
+      float n = fbm(p);
+
+      // Simpler wave calculation
+      float wave1 = sin(vUv.y * 8.0 + time * 0.5 + n * 2.0) * 0.5 + 0.5;
+      float wave2 = sin(vUv.y * 5.0 - time * 0.3 + n) * 0.5 + 0.5;
+
+      vec3 finalColor = color1 * wave1 + color2 * wave2;
+
+      float edgeFade = smoothstep(0.0, 0.2, vUv.y) * smoothstep(1.0, 0.8, vUv.y);
+      float alpha = (wave1 + wave2) * 0.5 * edgeFade * intensity;
+
+      gl_FragColor = vec4(finalColor, alpha);
+    }
+  `,
+
+  uniforms: { ...auroraShader.uniforms }
+};
+
+/**
+ * Volumetric Light - Mobile (Reduced samples from 50 to 15)
+ */
+export const volumetricLightShaderMobile = {
+  vertexShader: volumetricLightShader.vertexShader,
+
+  fragmentShader: `
+    uniform float time;
+    uniform vec2 lightPosition;
+    uniform vec3 lightColor;
+    uniform float intensity;
+    uniform float rayDensity;
+
+    varying vec2 vUv;
+
+    void main() {
+      vec2 toLight = lightPosition - vUv;
+      float distance = length(toLight);
+      vec2 direction = normalize(toLight);
+
+      // Reduced samples for mobile (15 instead of 50)
+      float illumination = 0.0;
+      int samples = 15;
+
+      for (int i = 0; i < 15; i++) {
+        float t = float(i) / float(samples);
+        vec2 samplePos = vUv + direction * t * distance;
+
+        float falloff = 1.0 - length(samplePos - lightPosition) / 1.5;
+        falloff = max(0.0, falloff);
+
+        float ray = sin(atan(samplePos.y - lightPosition.y, samplePos.x - lightPosition.x) * rayDensity + time) * 0.5 + 0.5;
+
+        illumination += falloff * ray * (1.0 - t);
+      }
+
+      illumination /= float(samples);
+
+      vec3 finalColor = lightColor * illumination * intensity;
+      float alpha = illumination * 0.5;
+
+      gl_FragColor = vec4(finalColor, alpha);
+    }
+  `,
+
+  uniforms: { ...volumetricLightShader.uniforms }
+};
+
+/**
+ * Nebula - Mobile (Reduced turbulence iterations from 6 to 3)
+ */
+export const nebulaShaderMobile = {
+  vertexShader: nebulaShader.vertexShader,
+
+  fragmentShader: `
+    uniform float time;
+    uniform vec3 color1;
+    uniform vec3 color2;
+    uniform float scale;
+    uniform float density;
+
+    varying vec2 vUv;
+
+    // Simplified 2D noise instead of 3D simplex
+    float hash(vec2 p) {
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+    }
+
+    float noise(vec2 p) {
+      vec2 i = floor(p);
+      vec2 f = fract(p);
+
+      f = f * f * (3.0 - 2.0 * f);
+
+      float a = hash(i);
+      float b = hash(i + vec2(1.0, 0.0));
+      float c = hash(i + vec2(0.0, 1.0));
+      float d = hash(i + vec2(1.0, 1.0));
+
+      return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+    }
+
+    // Reduced turbulence (3 iterations instead of 6)
+    float turbulence(vec2 p) {
+      float value = 0.0;
+      float amplitude = 1.0;
+
+      value += amplitude * noise(p);
+      value += amplitude * 0.5 * noise(p * 2.0);
+      value += amplitude * 0.25 * noise(p * 4.0);
+
+      return value;
+    }
+
+    void main() {
+      vec2 p = vUv * scale + time * 0.05;
+
+      float n1 = turbulence(p);
+      float n2 = turbulence(p * 1.5 + vec2(50.0));
+
+      float combined = n1 * 0.6 + n2 * 0.4;
+
+      vec3 finalColor = mix(color1, color2, combined);
+
+      float swirl = sin(combined * 4.0 + time * 0.5) * 0.5 + 0.5;
+      finalColor = mix(finalColor, color1 * 1.3, swirl * 0.2);
+
+      float alpha = combined * density;
+      alpha = smoothstep(0.2, 0.8, alpha);
+
+      gl_FragColor = vec4(finalColor, alpha * 0.7);
+    }
+  `,
+
+  uniforms: { ...nebulaShader.uniforms }
+};
+
+/**
+ * Helper function to choose shader based on device capability
+ */
+export function getOptimizedShader(
+  shaderName: 'aurora' | 'volumetricLight' | 'nebula',
+  isMobile: boolean
+) {
+  if (isMobile) {
+    switch (shaderName) {
+      case 'aurora':
+        return auroraShaderMobile;
+      case 'volumetricLight':
+        return volumetricLightShaderMobile;
+      case 'nebula':
+        return nebulaShaderMobile;
+    }
+  }
+
+  switch (shaderName) {
+    case 'aurora':
+      return auroraShader;
+    case 'volumetricLight':
+      return volumetricLightShader;
+    case 'nebula':
+      return nebulaShader;
+  }
+}
+
 export default {
   auroraShader,
   volumetricLightShader,
   nebulaShader,
-  particleGlowShader
+  particleGlowShader,
+  // Mobile variants
+  auroraShaderMobile,
+  volumetricLightShaderMobile,
+  nebulaShaderMobile,
+  // Helper
+  getOptimizedShader,
 };
