@@ -25,8 +25,11 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ isOpen, onClose }) => {
     setQuality,
     accessibility,
     setAccessibility,
+    haptics,
+    setHaptics,
     isMobile,
     isLowEnd,
+    deviceTier,
   } = useSettingsStore();
 
   const [localVolume, setLocalVolume] = useState(1.0);
@@ -103,18 +106,17 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ isOpen, onClose }) => {
             {/* Content */}
             <div className="settings-content">
               {/* Device Info */}
-              {(isMobile || isLowEnd) && (
-                <div className="settings-info">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                    <path d="M12 8v4M12 16h.01" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                  <p>
-                    {isMobile && 'Mobile device detected. '}
-                    {isLowEnd && 'Performance mode recommended.'}
-                  </p>
-                </div>
-              )}
+              <div className="settings-info">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                  <path d="M12 8v4M12 16h.01" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                <p>
+                  Device Tier: {deviceTier.toUpperCase()}
+                  {isMobile && ' (Mobile)'}
+                  {isLowEnd && ' — Performance mode recommended'}
+                </p>
+              </div>
 
               {/* Performance Section */}
               <section className="settings-section">
@@ -241,6 +243,47 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({ isOpen, onClose }) => {
                   </button>
                 </div>
               </section>
+
+              {/* Haptic Feedback Section (Phase 4) */}
+              {isMobile && (
+                <section className="settings-section">
+                  <h3 className="settings-section-title">Haptic Feedback</h3>
+
+                  <div className="settings-group">
+                    <label className="settings-toggle">
+                      <input
+                        type="checkbox"
+                        checked={haptics.enabled}
+                        onChange={(e) => setHaptics({ enabled: e.target.checked })}
+                      />
+                      <span className="settings-toggle-slider" />
+                      <span className="settings-toggle-label">
+                        Enable Haptics
+                        <small>Feel emotional moments through vibration</small>
+                      </span>
+                    </label>
+                  </div>
+
+                  {haptics.enabled && (
+                    <div className="settings-group">
+                      <label htmlFor="haptic-intensity-slider" className="settings-label">
+                        Haptic Intensity: {Math.round(haptics.intensity * 100)}%
+                      </label>
+                      <input
+                        id="haptic-intensity-slider"
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        value={haptics.intensity}
+                        onChange={(e) => setHaptics({ intensity: parseFloat(e.target.value) })}
+                        className="settings-slider"
+                        aria-label="Haptic feedback intensity"
+                      />
+                    </div>
+                  )}
+                </section>
+              )}
 
               {/* Keyboard Shortcuts */}
               <section className="settings-section">

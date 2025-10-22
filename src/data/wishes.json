@@ -98,5 +98,185 @@
     "animation": "shooting-star",
     "intensity": "bright",
     "timing": 2.2
+  },
+  {
+    "id": 11,
+    "text": "I wish the mirror finally shows you what I see",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "beauty",
+    "animation": "bloom",
+    "intensity": "soft",
+    "timing": 1.9
+  },
+  {
+    "id": 12,
+    "text": "I wish coffee mornings and the quiet moments that make life worth living",
+    "emotion": "serenity",
+    "effect": "gentle-float",
+    "theme": "warmth",
+    "animation": "twinkle",
+    "intensity": "soft",
+    "timing": 2.1
+  },
+  {
+    "id": 13,
+    "text": "I wish you a love that doesn't ask you to shrink",
+    "emotion": "awe",
+    "effect": "radial-bloom",
+    "theme": "strength",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 1.5
+  },
+  {
+    "id": 14,
+    "text": "I wish rainy windows and the warmth of being exactly where you belong",
+    "emotion": "nostalgia",
+    "effect": "fade-in-warm",
+    "theme": "warmth",
+    "animation": "bloom",
+    "intensity": "medium",
+    "timing": 2.0
+  },
+  {
+    "id": 15,
+    "text": "I wish you never forget how powerful gentleness can be",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "grace",
+    "animation": "twinkle",
+    "intensity": "soft",
+    "timing": 1.8
+  },
+  {
+    "id": 16,
+    "text": "I wish stolen glances that last lifetimes",
+    "emotion": "wonder",
+    "effect": "twinkle",
+    "theme": "beauty",
+    "animation": "twinkle",
+    "intensity": "medium",
+    "timing": 1.3
+  },
+  {
+    "id": 17,
+    "text": "I wish your courage stays louder than your doubts",
+    "emotion": "courage",
+    "effect": "radial-bloom",
+    "theme": "courage",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 1.4
+  },
+  {
+    "id": 18,
+    "text": "I wish music that knows exactly what you're feeling before you do",
+    "emotion": "wonder",
+    "effect": "twinkle",
+    "theme": "light",
+    "animation": "spiral",
+    "intensity": "medium",
+    "timing": 1.6
+  },
+  {
+    "id": 19,
+    "text": "I wish you bloom in concrete when everyone says it's impossible",
+    "emotion": "courage",
+    "effect": "sparkle-burst",
+    "theme": "strength",
+    "animation": "bloom",
+    "intensity": "bright",
+    "timing": 1.5
+  },
+  {
+    "id": 20,
+    "text": "I wish nights where the stars feel close enough to whisper secrets",
+    "emotion": "wonder",
+    "effect": "twinkle",
+    "theme": "beauty",
+    "animation": "twinkle",
+    "intensity": "medium",
+    "timing": 1.7
+  },
+  {
+    "id": 21,
+    "text": "I wish you find home in a person, not just a place",
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "warmth",
+    "animation": "bloom",
+    "intensity": "bright",
+    "timing": 2.0
+  },
+  {
+    "id": 22,
+    "text": "I wish laughter that doubles you over and makes your cheeks ache",
+    "emotion": "elation",
+    "effect": "bounce-glow",
+    "theme": "light",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 1.1
+  },
+  {
+    "id": 23,
+    "text": "I wish your fire never dims, not for anyone",
+    "emotion": "courage",
+    "effect": "radial-bloom",
+    "theme": "courage",
+    "animation": "pulse",
+    "intensity": "bright",
+    "timing": 1.6
+  },
+  {
+    "id": 24,
+    "text": "I wish the world treats you as tenderly as you treat it",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "kindness",
+    "animation": "bloom",
+    "intensity": "soft",
+    "timing": 2.2
+  },
+  {
+    "id": 25,
+    "text": "I wish you dance in kitchens and find magic in Tuesdays",
+    "emotion": "joy",
+    "effect": "sparkle-burst",
+    "theme": "grace",
+    "animation": "spiral",
+    "intensity": "medium",
+    "timing": 1.4
+  },
+  {
+    "id": 26,
+    "text": "I wish October 22nd brings you everything you deserve and more",
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "warmth",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 2.3
+  },
+  {
+    "id": 27,
+    "text": "I wish you stay soft in a world that demands hardness",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "grace",
+    "animation": "bloom",
+    "intensity": "soft",
+    "timing": 2.0
+  },
+  {
+    "id": 28,
+    "text": "I wish the universe conspires in your favor, always",
+    "emotion": "awe",
+    "effect": "radial-bloom",
+    "theme": "light",
+    "animation": "shooting-star",
+    "intensity": "bright",
+    "timing": 1.8
   }
 ]

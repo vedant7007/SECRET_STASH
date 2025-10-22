@@ -97,5 +97,104 @@
     "orb_size": "large",
     "reveal_delay": 1500,
     "timing": 3.0
+  },
+  {
+    "id": 10,
+    "text": "I promise to keep showing up, even when it's hard.",
+    "emotion": "courage",
+    "effect": "radial-bloom",
+    "theme": "courage",
+    "glow_color": "#DC143C",
+    "orb_size": "large",
+    "reveal_delay": 1100,
+    "timing": 2.4
+  },
+  {
+    "id": 11,
+    "text": "I promise to protect the softness you share with me like the rare gift it is.",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "grace",
+    "glow_color": "#E8E0F5",
+    "orb_size": "medium",
+    "reveal_delay": 1000,
+    "timing": 2.6
+  },
+  {
+    "id": 12,
+    "text": "I promise never to make you choose between your dreams and my comfort.",
+    "emotion": "awe",
+    "effect": "radial-bloom",
+    "theme": "strength",
+    "glow_color": "#8A4FFF",
+    "orb_size": "large",
+    "reveal_delay": 1300,
+    "timing": 2.7
+  },
+  {
+    "id": 13,
+    "text": "I promise to notice the little things — the ones you think no one sees.",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "kindness",
+    "glow_color": "#FFCBA4",
+    "orb_size": "medium",
+    "reveal_delay": 950,
+    "timing": 2.3
+  },
+  {
+    "id": 14,
+    "text": "I promise to carry your secrets as gently as I carry my own heart.",
+    "emotion": "serenity",
+    "effect": "gentle-float",
+    "theme": "grace",
+    "glow_color": "#D8BFD8",
+    "orb_size": "medium",
+    "reveal_delay": 1050,
+    "timing": 2.5
+  },
+  {
+    "id": 15,
+    "text": "I promise that loving you will never feel like work, even when it takes effort.",
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "warmth",
+    "glow_color": "#FF8C42",
+    "orb_size": "large",
+    "reveal_delay": 1400,
+    "timing": 2.9
+  },
+  {
+    "id": 16,
+    "text": "I promise to keep choosing you, on purpose, every single day.",
+    "emotion": "completion",
+    "effect": "radial-bloom",
+    "theme": "warmth",
+    "glow_color": "#FFB347",
+    "orb_size": "large",
+    "reveal_delay": 1350,
+    "timing": 2.7
+  },
+  {
+    "id": 17,
+    "text": "I promise to build a world where you never have to dim your light.",
+    "emotion": "awe",
+    "effect": "radial-bloom",
+    "theme": "light",
+    "glow_color": "#FFFFFF",
+    "orb_size": "large",
+    "reveal_delay": 1250,
+    "timing": 2.6
+  },
+  {
+    "id": 18,
+    "text": "I promise to love you louder than your doubts and gentler than your fears.",
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "warmth",
+    "glow_color": "#FF6B35",
+    "orb_size": "large",
+    "reveal_delay": 1450,
+    "timing": 3.1
   }
 ]

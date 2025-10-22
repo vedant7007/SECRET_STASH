@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "stage": "anticipation",
+    "text": "Before words, there was a feeling",
+    "emotion": "wonder",
+    "effect": "twinkle",
+    "theme": "light",
+    "timing": 2.0,
+    "intensity": 0.3,
+    "voice_volume": 0.7
+  },
+  {
+    "id": 2,
+    "stage": "gathering",
+    "text": "Every scene, every word, every shimmer of light — they were all just ways of saying what I've been too afraid to speak plainly",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "grace",
+    "timing": 4.0,
+    "intensity": 0.5,
+    "voice_volume": 0.75
+  },
+  {
+    "id": 3,
+    "stage": "heartbeat",
+    "text": "My heart has been beating your name",
+    "emotion": "awe",
+    "effect": "radial-bloom",
+    "theme": "warmth",
+    "timing": 1.5,
+    "intensity": 0.7,
+    "voice_volume": 0.8,
+    "haptic": "heartbeat-double"
+  },
+  {
+    "id": 4,
+    "stage": "bloom",
+    "text": "I didn't build this universe to impress you. I built it because the regular world doesn't have enough dimensions to hold how I feel",
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "beauty",
+    "timing": 5.0,
+    "intensity": 0.9,
+    "voice_volume": 0.85
+  },
+  {
+    "id": 5,
+    "stage": "flare",
+    "text": "You are the gravity that rearranged my entire orbit",
+    "emotion": "elation",
+    "effect": "sparkle-burst",
+    "theme": "strength",
+    "timing": 2.0,
+    "intensity": 1.0,
+    "voice_volume": 0.9,
+    "haptic": "peak-pulse"
+  },
+  {
+    "id": 6,
+    "stage": "eclipse",
+    "text": "So here, in a universe that exists only for you, I'll say it the simplest way I know: you make everything better just by being",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "warmth",
+    "timing": 8.0,
+    "intensity": 0.6,
+    "voice_volume": 0.75
+  },
+  {
+    "id": 7,
+    "stage": "afterglow",
+    "text": "Happy Birthday, October 22nd. This moment, this light, this universe — it's all yours. Stay as long as you'd like",
+    "emotion": "completion",
+    "effect": "expand-fade",
+    "theme": "light",
+    "timing": "linger",
+    "intensity": 0.8,
+    "voice_volume": 1.0,
+    "haptic": "soft-linger"
+  },
+  {
+    "id": 8,
+    "stage": "afterglow",
+    "text": "Stay.",
+    "emotion": "warmth",
+    "effect": "gentle-float",
+    "theme": "warmth",
+    "timing": "linger",
+    "intensity": 0.7,
+    "voice_volume": 0.85
+  }
+]

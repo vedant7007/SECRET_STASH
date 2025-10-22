@@ -94,5 +94,101 @@
     "rain_intensity": 0.4,
     "pause_duration": 2600,
     "timing": 2.1
+  },
+  {
+    "id": 9,
+    "text": "I'm sorry for the distance I created when I was afraid of getting too close.",
+    "emotion": "tenderness",
+    "effect": "fade-in-warm",
+    "theme": "grace",
+    "intensity": "deep",
+    "petal_count": 20,
+    "rain_intensity": 0.5,
+    "pause_duration": 2900,
+    "timing": 2.4
+  },
+  {
+    "id": 10,
+    "text": "I'm sorry I didn't say the words out loud when you needed to hear them most.",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "warmth",
+    "intensity": "soft",
+    "petal_count": 18,
+    "rain_intensity": 0.4,
+    "pause_duration": 2700,
+    "timing": 2.2
+  },
+  {
+    "id": 11,
+    "text": "I'm sorry for making you feel like you had to be small to fit into my world.",
+    "emotion": "tenderness",
+    "effect": "gentle-float",
+    "theme": "kindness",
+    "intensity": "deep",
+    "petal_count": 26,
+    "rain_intensity": 0.65,
+    "pause_duration": 3100,
+    "timing": 2.7
+  },
+  {
+    "id": 12,
+    "text": "I'm sorry for the times fear spoke louder than my heart.",
+    "emotion": "serenity",
+    "effect": "fade-in-warm",
+    "theme": "courage",
+    "intensity": "soft",
+    "petal_count": 14,
+    "rain_intensity": 0.35,
+    "pause_duration": 2500,
+    "timing": 2.0
+  },
+  {
+    "id": 13,
+    "text": "I'm sorry I didn't protect your softness the way you deserved.",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "grace",
+    "intensity": "deep",
+    "petal_count": 22,
+    "rain_intensity": 0.55,
+    "pause_duration": 2950,
+    "timing": 2.5
+  },
+  {
+    "id": 14,
+    "text": "I'm sorry for not noticing the weight you carried in silence.",
+    "emotion": "tenderness",
+    "effect": "gentle-float",
+    "theme": "warmth",
+    "intensity": "deep",
+    "petal_count": 24,
+    "rain_intensity": 0.6,
+    "pause_duration": 3050,
+    "timing": 2.6
+  },
+  {
+    "id": 15,
+    "text": "I'm sorry for every moment I chose pride over peace.",
+    "emotion": "serenity",
+    "effect": "fade-in-warm",
+    "theme": "wisdom",
+    "intensity": "soft",
+    "petal_count": 16,
+    "rain_intensity": 0.4,
+    "pause_duration": 2650,
+    "timing": 2.1
+  },
+  {
+    "id": 16,
+    "text": "I'm sorry for not being brave enough sooner.",
+    "emotion": "tenderness",
+    "effect": "soft-glow",
+    "theme": "courage",
+    "intensity": "tender",
+    "petal_count": 20,
+    "rain_intensity": 0.5,
+    "pause_duration": 2800,
+    "timing": 2.3
   }
 ]

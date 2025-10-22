@@ -41,6 +41,13 @@ export interface AccessibilitySettings {
   audioDescriptions: boolean;
 }
 
+export interface HapticSettings {
+  enabled: boolean;
+  intensity: number; // 0-1
+}
+
+export type DeviceTier = 'low' | 'mid' | 'high' | 'ultra';
+
 interface SettingsStore {
   // Current quality preset
   quality: QualityPreset;
@@ -51,13 +58,18 @@ interface SettingsStore {
   // Accessibility settings
   accessibility: AccessibilitySettings;
 
+  // Haptic settings (Phase 4)
+  haptics: HapticSettings;
+
   // Device detection
   isMobile: boolean;
   isLowEnd: boolean;
+  deviceTier: DeviceTier;
 
   // Actions
   setQuality: (preset: QualityPreset) => void;
   setAccessibility: (key: keyof AccessibilitySettings, value: boolean) => void;
+  setHaptics: (settings: Partial<HapticSettings>) => void;
   detectDeviceCapabilities: () => void;
 }
 
@@ -118,8 +130,28 @@ const QUALITY_PRESETS: Record<QualityPreset, PerformanceSettings> = {
   },
 };
 
+// Detect device tier (Phase 4 integration)
+function detectDeviceTier(): DeviceTier {
+  const cores = navigator.hardwareConcurrency || 2;
+  const memory = (navigator as any).deviceMemory || 4;
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+
+  // 4-tier system
+  if (cores >= 8 && memory >= 8 && !isMobile) {
+    return 'ultra'; // Desktop high-end (RTX 3060+, M1 Pro+)
+  } else if (cores >= 6 && memory >= 6) {
+    return 'high'; // High-end phones (iPhone 14+, Snapdragon 8 Gen 2+)
+  } else if (cores >= 4 && memory >= 4) {
+    return 'mid'; // Mid-range phones
+  } else {
+    return 'low'; // Low-end phones, old devices
+  }
+}
+
 // Detect device capabilities
-function detectDevice(): { isMobile: boolean; isLowEnd: boolean; recommendedQuality: QualityPreset } {
+function detectDevice(): { isMobile: boolean; isLowEnd: boolean; deviceTier: DeviceTier; recommendedQuality: QualityPreset } {
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
   );
@@ -136,29 +168,32 @@ function detectDevice(): { isMobile: boolean; isLowEnd: boolean; recommendedQual
   const debugInfo = gl?.getExtension('WEBGL_debug_renderer_info');
   const renderer = debugInfo ? gl?.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : '';
 
-  // Determine if device is low-end
-  const isLowEnd = cores < 4 || memory < 4 || isMobile;
+  // Determine device tier (Phase 4)
+  const deviceTier = detectDeviceTier();
 
-  // Recommend quality based on capabilities
-  let recommendedQuality: QualityPreset;
-  if (isLowEnd) {
-    recommendedQuality = isMobile ? 'low' : 'medium';
-  } else if (cores >= 8 && memory >= 8) {
-    recommendedQuality = 'ultra';
-  } else {
-    recommendedQuality = 'high';
-  }
+  // Determine if device is low-end
+  const isLowEnd = deviceTier === 'low' || deviceTier === 'mid';
+
+  // Recommend quality based on device tier
+  const tierToQuality: Record<DeviceTier, QualityPreset> = {
+    low: 'low',
+    mid: 'medium',
+    high: 'high',
+    ultra: 'ultra',
+  };
+  const recommendedQuality = tierToQuality[deviceTier];
 
   console.log('[SettingsManager] Device detection:', {
     isMobile,
     isLowEnd,
+    deviceTier,
     cores,
     memory,
     renderer,
     recommendedQuality,
   });
 
-  return { isMobile, isLowEnd, recommendedQuality };
+  return { isMobile, isLowEnd, deviceTier, recommendedQuality };
 }
 
 // Check for prefers-reduced-motion
@@ -182,8 +217,14 @@ const useSettingsStore = create<SettingsStore>()(
         audioDescriptions: false,
       },
 
+      haptics: {
+        enabled: true,
+        intensity: 1.0,
+      },
+
       isMobile: false,
       isLowEnd: false,
+      deviceTier: 'high',
 
       setQuality: (preset: QualityPreset) => {
         set({
@@ -205,12 +246,24 @@ const useSettingsStore = create<SettingsStore>()(
         console.log(`[SettingsManager] Accessibility: ${key} = ${value}`);
       },
 
+      setHaptics: (settings: Partial<HapticSettings>) => {
+        set({
+          haptics: {
+            ...get().haptics,
+            ...settings,
+          },
+        });
+
+        console.log(`[SettingsManager] Haptics updated:`, settings);
+      },
+
       detectDeviceCapabilities: () => {
-        const { isMobile, isLowEnd, recommendedQuality } = detectDevice();
+        const { isMobile, isLowEnd, deviceTier, recommendedQuality } = detectDevice();
 
         set({
           isMobile,
           isLowEnd,
+          deviceTier,
           quality: recommendedQuality,
           performance: QUALITY_PRESETS[recommendedQuality],
         });
