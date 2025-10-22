@@ -1,5 +1,5 @@
 /**
- * GalaxyOfWishes.v2.tsx — CINEMATIC EDITION
+ * GalaxyOfWishes.CINEMATIC.tsx — PHASE 7.5: CINEMATIC OVERHAUL
  *
  * A cosmos with depth, meaning, and emotion.
  * Not random particles—a universe being built, wish by wish.
@@ -192,7 +192,7 @@ const ParallaxStarfield = () => {
             ? new THREE.Color('#E0F7FF') // Cool white
             : layerIndex === 2
             ? new THREE.Color('#B0E0FF') // Pale blue
-            : new THREE.Color('#8899aa'); // Dusty gray
+            : new THREE.Color('#8899AA'); // Dusty gray
 
           colors[i * 3] = color.r;
           colors[i * 3 + 1] = color.g;
@@ -451,7 +451,7 @@ const ConstellationCluster = ({ points }: { points: ConstellationPoint[] }) => {
 /**
  * Main Galaxy Scene
  */
-const GalaxyOfWishesV2 = () => {
+const GalaxyOfWishes_Cinematic = () => {
   const [releasedWishes, setReleasedWishes] = useState<number[]>([]);
   const [activeShootingStars, setActiveShootingStars] = useState<Array<{
     id: number;
@@ -590,4 +590,4 @@ const GalaxyOfWishesV2 = () => {
   );
 };
 
-export default GalaxyOfWishesV2;
+export default GalaxyOfWishes_Cinematic;

@@ -174,6 +174,18 @@ export const EMOTION_TO_ANIMATION: Record<string, AnimationEffect> = {
     easing: 'ease-out',
     properties: { scale: [1, 2], opacity: [1, 0], blur: [0, 20] },
   },
+  courage: {
+    name: 'bold-flash',
+    duration: 1000,
+    easing: 'ease-out',
+    properties: { scale: [1, 1.3, 1], brightness: [1, 1.4, 1], rotate: [0, 5, 0] },
+  },
+  warmth: {
+    name: 'ember-pulse',
+    duration: 1400,
+    easing: 'ease-in-out',
+    properties: { scale: [1, 1.15, 1], blur: 6, hue: 30 },
+  },
 };
 
 /**
